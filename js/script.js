@@ -33,6 +33,16 @@ document.getElementById('add-btn').addEventListener(
                     }
                 )
             }
+
+            for (const button of doneButton) {
+                button.addEventListener(
+                    'click',
+
+                    function (e) {
+                        e.target.parentNode.parentNode.style.textDecoration = 'line-through'
+                    }
+                )
+            }
         }
     }
 )
