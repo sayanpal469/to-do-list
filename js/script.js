@@ -1,4 +1,4 @@
-let count = 1;
+let count = 0;
 
 document.getElementById('add-btn').addEventListener(
     'click',
@@ -9,7 +9,10 @@ document.getElementById('add-btn').addEventListener(
 
         if (inputValue == '') {
             alert('please enter a value')
-        } else {
+        } else if(inputValue == Number(true)) {
+            alert('please enter word, not number')
+        }
+        else {
             const mainContainer = document.getElementById('content-container');
     
             const tableContainer = document.createElement('tr');
@@ -44,5 +47,14 @@ document.getElementById('add-btn').addEventListener(
                 )
             }
         }
+    }
+)
+
+document.getElementById('clear-all').addEventListener(
+    'click',
+
+    function () {
+        const tableBody = document.getElementById('content-container');
+        tableBody.style.display = 'none'
     }
 )
